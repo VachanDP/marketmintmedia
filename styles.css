@@ -1101,6 +1101,67 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
+.founder-tech-panel {
+  min-height: 340px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(199, 239, 117, 0.3), transparent 30%),
+    linear-gradient(145deg, #252525 0%, #111111 68%);
+}
+
+.founder-tech-panel::before,
+.founder-tech-panel::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(199, 239, 117, 0.35);
+  border-radius: 50%;
+}
+
+.founder-tech-panel::before {
+  width: 260px;
+  height: 260px;
+}
+
+.founder-tech-panel::after {
+  width: 360px;
+  height: 360px;
+  opacity: 0.45;
+}
+
+.founder-tech-panel .founder-photo-label {
+  top: 28px;
+  left: 28px;
+  z-index: 1;
+}
+
+.founder-tech-mark {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+
+.founder-tech-caption {
+  position: relative;
+  z-index: 1;
+  margin-top: 18px;
+  color: var(--mint);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
 .founder-card:hover {
   transform: translateY(-6px);
   border-color: var(--mint);
