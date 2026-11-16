@@ -62,33 +62,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 4. Contact Form Submission Handling
-  const contactForm = document.getElementById('agencyContactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+  const contactForms = document.querySelectorAll('#agencyContactForm, #heroLeadForm');
+  contactForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const originalText = btn.innerHTML;
-      
-      btn.disabled = true;
-      btn.innerHTML = `SENDING...`;
 
-      setTimeout(() => {
-        btn.style.backgroundColor = '#69D6A3';
-        btn.style.color = '#123B2B';
-        btn.innerHTML = `✓ ENQUIRY SENT SUCCESSFULLY`;
+      const formData = new FormData(form);
+      const subject = `New Market Mint Media enquiry from ${formData.get('name')}`;
+      const body = Array.from(formData.entries())
+        .filter(([key]) => key !== 'services')
+        .map(([key, value]) => `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`)
+        .join('\n');
+      const selectedServices = formData.getAll('services');
 
-        contactForm.reset();
+      const enquiryBody = selectedServices.length
+        ? `${body}\nServices: ${selectedServices.join(', ')}`
+        : body;
 
-        setTimeout(() => {
-          btn.disabled = false;
-          btn.style.backgroundColor = '';
-          btn.style.color = '';
-          btn.innerHTML = originalText;
-        }, 4000);
-      }, 1000);
+      window.location.href = `mailto:marketmintmedia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(enquiryBody)}`;
     });
-  }
+  });
 
   // 5. Infinite Marquee Duplicate Track for Seamless Loop
   const marqueeTrack = document.getElementById('marqueeTrack');

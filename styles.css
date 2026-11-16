@@ -450,6 +450,62 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
+.hero-lead-form {
+  width: min(100%, 560px);
+  margin-bottom: 28px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-form-heading {
+  margin-bottom: 16px;
+}
+
+.hero-form-heading .section-subtitle {
+  margin-bottom: 4px;
+}
+
+.hero-form-heading p,
+.hero-form-note {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.hero-form-fields {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.hero-lead-form .form-input,
+.hero-lead-form .form-textarea {
+  background: var(--bg-color);
+}
+
+.hero-lead-form .btn-primary {
+  width: 100%;
+}
+
+.hero-form-note {
+  margin-top: 10px;
+  font-size: 0.75rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
