@@ -96,4 +96,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const clone = marqueeTrack.cloneNode(true);
     marqueeTrack.parentElement.appendChild(clone);
   }
+
 });
