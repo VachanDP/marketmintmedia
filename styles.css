@@ -1086,6 +1086,21 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition-normal);
 }
 
+.founder-card--name-only {
+  display: flex;
+  align-items: center;
+  min-height: 340px;
+}
+
+.founder-card--name-only .founder-details {
+  width: 100%;
+  text-align: center;
+}
+
+.founder-card--name-only .founder-name {
+  margin-bottom: 0;
+}
+
 .founder-card:hover {
   transform: translateY(-6px);
   border-color: var(--mint);
